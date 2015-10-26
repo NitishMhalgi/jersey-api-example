@@ -33,21 +33,21 @@ public class NitishWebService
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<User> getAllLists() {
+    public List<User> getAllUsers() {
         return store.getAll();
     }
 
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public User getList(@PathParam("id") Long id) {
+    public User getUser(@PathParam("id") Long id) {
         return store.get(id);
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public User saveNewList(User user) {
+    public User saveNewUsert(User user) {
         return store.save(user);
     }
 
@@ -55,14 +55,14 @@ public class NitishWebService
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public User updateList(@PathParam("id") Long id, User user) {
+    public User updateUser(@PathParam("id") Long id, User user) {
         return store.save(user);
     }
     
     @DELETE
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public User deleteList(@PathParam("id") Long id) {
+    public User deleteUser(@PathParam("id") Long id) {
         return store.delete(store.get(id));
     }
 
